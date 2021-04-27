@@ -7,4 +7,17 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+
+    logoHeader: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '49%',
+        backgroundColor: '#003B71',
+    },
+
+    logoHeaderText: {
+        color: 'white',
+        fontFamily: 'Times New Roman',
+        fontWeight: '100'
+    }
 });
