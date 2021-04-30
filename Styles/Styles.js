@@ -11,13 +11,14 @@ export const styles = StyleSheet.create({
     logoHeader: {
         justifyContent: 'center',
         alignItems: 'center',
-        height: '49%',
+        paddingTop: 30,
+        paddingBottom: 10,
+        // height: '49%',
         backgroundColor: '#003B71',
     },
 
     logoHeaderText: {
         color: 'white',
-        fontFamily: 'Times New Roman',
-        fontWeight: '100'
+        fontWeight: '400'
     }
 });

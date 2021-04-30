@@ -32,7 +32,6 @@ export default function App() {
 function HomeHeader ( {route, navigation } ) {
     return (
         <SafeAreaView style={styles.logoHeader}>
-            <Image source={{uri: './assets/'}}></Image>
             <Image source={require('./assets/ic-logo-white.png')} style={{ width: 170, height: 26 }}></Image>
             <Text style={styles.logoHeaderText}>TOURS</Text>
             <StatusBar style="light"/>
