@@ -24,5 +24,21 @@ export const homeStyles = StyleSheet.create({
         width: win.width,
         height: win.width/2,
         resizeMode: 'cover',
+    },
+
+    buildingTextView: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,.5)'
+    },
+
+    buildingText: {
+        color: 'white',
     }
+
 });

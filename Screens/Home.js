@@ -21,7 +21,7 @@ const buildings = [
     {key: "writ", name: "Smiddy Hall", image: require('../assets/icon.png')},
     {key: "text", name: "Textor Hall", image: require('../assets/icon.png')},
     {key: "will", name: "Williams Hall", image: require('../assets/icon.png')},
-    {key: "", name: "", image: require('../assets/icon.png')},
+    /* {key: "", name: "", image: require('../assets/icon.png')}, */
 ]
 
 export function HomeScreen ( { route, navigation} ) {
@@ -31,9 +31,11 @@ export function HomeScreen ( { route, navigation} ) {
             console.log("NO NAME")
         }
         return(
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 2}}>
-                <Text>{name}</Text>
+            <View style={{borderBottomColor: 'black', borderBottomWidth: 2,}}>
                 <Image source={imageSource} style={homeStyles.buildingImages}/>
+                <View style={homeStyles.buildingTextView}>
+                    <Text style={homeStyles.buildingText}>{name}</Text>
+                </View>
             </View>
         );
     }
