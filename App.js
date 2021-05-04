@@ -7,6 +7,7 @@ import { HomeScreen } from './Screens/Home.js'
 import { styles } from './Styles/Styles.js'
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo'
+import { BuildingScreen } from './Screens/Building.js';
 
 const Stack = createStackNavigator();
 
@@ -18,6 +19,15 @@ export default function App() {
                 <Stack.Screen 
                     name="Home" 
                     component={HomeScreen} 
+                    options={{
+                        headerStyle: {backgroundColor: '#003B71'}, 
+                        headerTintColor: 'white',
+                        header: HomeHeader
+                    }}
+                />
+                <Stack.Screen
+                    name="Building"
+                    component={BuildingScreen}
                     options={{
                         headerStyle: {backgroundColor: '#003B71'}, 
                         headerTintColor: 'white',

@@ -7,7 +7,7 @@ import { FlatList } from 'react-native-gesture-handler';
 // import { buildings } from '../assets/buildings.json';
 
 const buildings = [
-    {key: "jjwcm", name: "James J Whalen Center for Music", image: require('../assets/building-images/jjwcm.jpeg')}, 
+    {key: "jjwcm", name: "James J. Whalen Center for Music", image: require('../assets/building-images/jjwcm.jpeg')}, 
     {key: "dill", name: "Dillingham Center", image: require('../assets/building-images/dill.jpeg')}, 
     {key: "frnd", name: "Friends Hall", image: require('../assets/building-images/frnd.jpeg')}, 
     {key: "gann", name: "Gannett Center", image: require('../assets/building-images/gann.jpeg')}, 
@@ -24,15 +24,17 @@ const buildings = [
     /* {key: "", name: "", image: require('../assets/icon.png')}, */
 ]
 
-export function HomeScreen ( { route, navigation} ) {
+export function HomeScreen ( {route, navigation} ) {
 
-    function RenderBuildings ({name, imageSource}) {
+    function RenderBuildings ({name, imageSource, key}) {
         if (name == null) {
             console.log("NO NAME")
         }
+        else console.log(name);
         return(
             <TouchableOpacity style={{borderBottomColor: 'black', borderBottomWidth: 2,}}
-            activeOpacity={.2}>
+            activeOpacity={.2}
+            onPress={() => navigation.navigate('Building', {buildings: buildings, name: name})}>
                 <Image source={imageSource} style={homeStyles.buildingImages}/>
                 <View style={homeStyles.buildingTextView}>
                     <Text style={homeStyles.buildingText}>{name}</Text>
@@ -62,7 +64,7 @@ export function HomeScreen ( { route, navigation} ) {
                 }
                 data={buildings}
                 extraData={buildings}
-                renderItem={({item}) => <RenderBuildings key={item.key} name={item.name} imageSource={item.image}/>}
+                renderItem={({item}) => <RenderBuildings name={item.name} imageSource={item.image}/>}
             />
         </View>
     );
