@@ -27,10 +27,6 @@ const buildings = [
 export function HomeScreen ( {route, navigation} ) {
 
     function RenderBuildings ({name, imageSource, key}) {
-        if (name == null) {
-            console.log("NO NAME")
-        }
-        else console.log(name);
         return(
             <TouchableOpacity style={{borderBottomColor: 'black', borderBottomWidth: 2,}}
             activeOpacity={.2}
