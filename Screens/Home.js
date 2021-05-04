@@ -46,7 +46,14 @@ export function HomeScreen ( { route, navigation} ) {
                 ListHeaderComponent={
                     <View>
                         <StatusBar style="light"/>
-                        <Image source={require('../assets/prw-with-flowers.jpeg')} style={homeStyles.images}/>
+                        <View>
+                            <Image source={require('../assets/prw-with-flowers.jpeg')} style={homeStyles.images}/>
+                            <View style={homeStyles.prwTextView}>
+                                <View style={homeStyles.prwTextBackground}>
+                                    <Text style={homeStyles.prwText}>Welcome to {"\n"} Ithaca College</Text>
+                                </View>
+                            </View>
+                        </View>
                         <View style={homeStyles.buildingsView}>
                             <Text>
                                 Buildings:
