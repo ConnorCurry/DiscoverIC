@@ -19,4 +19,10 @@ export const homeStyles = StyleSheet.create({
         justifyContent: 'center',
         padding: 10
     },
+
+    buildingImages: {
+        width: win.width,
+        resizeMode: 'contain',
+        height: 250
+    }
 });
