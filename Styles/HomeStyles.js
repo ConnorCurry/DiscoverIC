@@ -22,7 +22,7 @@ export const homeStyles = StyleSheet.create({
 
     buildingImages: {
         width: win.width,
-        resizeMode: 'contain',
-        height: 250
+        height: win.width/2,
+        resizeMode: 'cover',
     }
 });
