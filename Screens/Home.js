@@ -26,7 +26,7 @@ const buildings = [
 
 export function HomeScreen ( {route, navigation} ) {
 
-    function RenderBuildings ({name, imageSource, key}) {
+    function RenderBuildings ({name, imageSource}) {
         return(
             <TouchableOpacity style={{borderBottomColor: 'black', borderBottomWidth: 2,}}
             activeOpacity={.2}
