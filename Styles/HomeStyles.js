@@ -13,11 +13,11 @@ export const homeStyles = StyleSheet.create({
 
     buildingsView: {
         width: win.width,
-        backgroundColor: 'lightgray',
+        height: 5,
+        backgroundColor: '#003B71',
         borderWidth: 1,
-        borderColor: 'gray',
+        borderColor: '#003B71',
         justifyContent: 'center',
-        padding: 10
     },
 
     buildingImages: {

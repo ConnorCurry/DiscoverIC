@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Text, View, SafeAreaView, ScrollView, Image } from 'react-native';
+import { Text, View, SafeAreaView, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { styles } from '../Styles/Styles.js';
 import { homeStyles } from '../Styles/HomeStyles.js';
 import { FlatList } from 'react-native-gesture-handler';
@@ -31,12 +31,13 @@ export function HomeScreen ( { route, navigation} ) {
             console.log("NO NAME")
         }
         return(
-            <View style={{borderBottomColor: 'black', borderBottomWidth: 2,}}>
+            <TouchableOpacity style={{borderBottomColor: 'black', borderBottomWidth: 2,}}
+            activeOpacity={.9}>
                 <Image source={imageSource} style={homeStyles.buildingImages}/>
                 <View style={homeStyles.buildingTextView}>
                     <Text style={homeStyles.buildingText}>{name}</Text>
                 </View>
-            </View>
+            </TouchableOpacity>
         );
     }
 
@@ -55,9 +56,7 @@ export function HomeScreen ( { route, navigation} ) {
                             </View>
                         </View>
                         <View style={homeStyles.buildingsView}>
-                            <Text>
-                                Buildings:
-                            </Text>
+                            
                         </View>
                     </View>
                 }
