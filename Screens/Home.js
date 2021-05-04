@@ -32,7 +32,7 @@ export function HomeScreen ( { route, navigation} ) {
         }
         return(
             <TouchableOpacity style={{borderBottomColor: 'black', borderBottomWidth: 2,}}
-            activeOpacity={.9}>
+            activeOpacity={.2}>
                 <Image source={imageSource} style={homeStyles.buildingImages}/>
                 <View style={homeStyles.buildingTextView}>
                     <Text style={homeStyles.buildingText}>{name}</Text>
@@ -44,6 +44,7 @@ export function HomeScreen ( { route, navigation} ) {
     return ( 
         <View>
             <FlatList
+                style={{backgroundColor: '#002343'}}
                 ListHeaderComponent={
                     <View>
                         <StatusBar style="light"/>
@@ -55,8 +56,7 @@ export function HomeScreen ( { route, navigation} ) {
                                 </View>
                             </View>
                         </View>
-                        <View style={homeStyles.buildingsView}>
-                            
+                        <View style={homeStyles.divider}>
                         </View>
                     </View>
                 }

@@ -11,7 +11,7 @@ export const homeStyles = StyleSheet.create({
         resizeMode: "contain",
     },
 
-    buildingsView: {
+    divider: {
         width: win.width,
         height: 5,
         backgroundColor: '#003B71',
