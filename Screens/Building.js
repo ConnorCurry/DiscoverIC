@@ -29,29 +29,42 @@ const buildingInfo = {
 export function BuildingScreen ({ route, navigation }) {
     const {name} = route.params;
     const {imageSource} = route.params
+    const [quoteRender, setQuoteRender] = React.useState(true);
 
     function RenderStudentQuotes({quote}) {
+        /* if (quoteRender) {
+            setQuoteRender(false);
+        } else setQuoteRender(true); */
         return (
             <View>
-                <Text>{quote}</Text>
+                <Text 
+                    style={quoteRender ? buildingStyles.studentQuoteStyle0 : buildingStyles.studentQuoteStyle1}>
+                        "{quote}"
+                </Text>
             </View>
         )
     }
 
     return(
         <FlatList
+            style={buildingStyles.flatListStyle}
             ListHeaderComponent={
                 <View>
-                    <Image source={imageSource}/>
-                    <Text>Building Info: {name} </Text>
-                    <Text>{buildingInfo[name].summary}</Text>
+                    <View>
+                        <Image source={imageSource} style={buildingStyles.buildingImage}/>
+                        <View style={buildingStyles.buildingTextView}>
+                            <Text style={buildingStyles.buildingText}>{name} </Text>
+                        </View>
+                    </View>
+                    <Text style={buildingStyles.summaryText}>{buildingInfo[name].summary}</Text>
+                    <Text style={buildingStyles.studentsSayStyle}>Students Say:</Text>
                 </View>
             }
             data={buildingInfo[name].studentQuotes}
             renderItem={({item}) => <RenderStudentQuotes quote={item.quote}/>}
             ListFooterComponent={
                 <View>
-                    <Text>Accessible? {buildingInfo[name].accessible}</Text>
+                    <Text style={buildingStyles.accessibiltyStyle}>Accessible? {buildingInfo[name].accessible}</Text>
                 </View>
             }
         />
