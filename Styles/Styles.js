@@ -19,6 +19,6 @@ export const styles = StyleSheet.create({
 
     logoHeaderText: {
         color: 'white',
-        fontWeight: '400'
+        fontWeight: '600'
     }
 });
