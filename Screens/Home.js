@@ -30,7 +30,7 @@ export function HomeScreen ( {route, navigation} ) {
         return(
             <TouchableOpacity style={{borderBottomColor: 'black', borderBottomWidth: 2,}}
             activeOpacity={.2}
-            onPress={() => navigation.navigate('Building', {buildings: buildings, name: name})}>
+            onPress={() => navigation.navigate('Building', {name: name, imageSource: imageSource})}>
                 <Image source={imageSource} style={homeStyles.buildingImages}/>
                 <View style={homeStyles.buildingTextView}>
                     <Text style={homeStyles.buildingText}>{name}</Text>
