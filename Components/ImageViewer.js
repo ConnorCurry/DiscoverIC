@@ -35,33 +35,22 @@ export function ImageViewer({images, setViewingImages, viewingImages}) {
             }, 300)
         }
         
+        let imageArray = []
+        for (let i = 0; i < images.length; i++) {
+            console.log(images[i].text);
+            let tempItem = (
+                <View style={imageViewerStyles.contentContainer} key={i}>
+                    <Text style={imageViewerStyles.contentText}>{images[i].text}</Text>
+                    <Image source={images[i].image} style={imageViewerStyles.image}/>
+                    <Button title="Dismiss" onPress={() => done()} color={'white'}/>
+                </View>
+            );
+            imageArray[i] = tempItem;
+        }
+
         return (
         <Swiper loop={false} activeDotColor={'#003B71'}>
-            <View style={imageViewerStyles.contentContainer}>
-                <Text style={imageViewerStyles.contentText}>{images[0].text}</Text>
-                <Image source={images[0].image} style={imageViewerStyles.image}/>
-                <Button title="Dismiss" onPress={() => done()} color={'white'}/>
-            </View>
-            <View style={imageViewerStyles.contentContainer}>
-                <Text style={imageViewerStyles.contentText}>{images[3].text}</Text>
-                <Image source={images[3].image} style={imageViewerStyles.image}/>
-                <Button title="Dismiss" onPress={() => done()} color={'white'}/>
-            </View>
-            <View style={imageViewerStyles.contentContainer}>
-                <Text style={imageViewerStyles.contentText}>{images[6].text}</Text>
-                <Image source={images[6].image} style={imageViewerStyles.image}/>
-                <Button title="Dismiss" onPress={() => done()} color={'white'}/>
-            </View>
-            <View style={imageViewerStyles.contentContainer}>
-            <Text style={imageViewerStyles.contentText}>{images[10].text}</Text>
-                <Image source={images[10].image} style={imageViewerStyles.image}/>
-                <Button title="Dismiss" onPress={() => done()} color={'white'}/>
-            </View>
-            <View style={imageViewerStyles.contentContainer}>
-            <Text style={imageViewerStyles.contentText}>{images[13].text}</Text>
-                <Image source={images[13].image} style={imageViewerStyles.image}/>
-                <Button title="Dismiss" onPress={() => done()} color={'white'}/>
-            </View>
+            {imageArray}
         </Swiper>
         )
     }
