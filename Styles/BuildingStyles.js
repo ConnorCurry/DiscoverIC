@@ -26,32 +26,37 @@ export const buildingStyles = StyleSheet.create({
         fontSize: win.width / 15,
         width: win.width * .7,
         textAlign: 'center',
+        fontFamily: 'Source',
     },
 
     summaryText: {
-        color: 'lightgray',
+        color: 'rgba(185,185,185,1)',
         padding: 10,
         fontSize: win.width / 22,
         fontWeight: '500',
+        fontFamily: 'Roboto',
+
     },
 
     flatListStyle: {
-        backgroundColor: '#002343',
+        backgroundColor: '#1C475F',
     },
 
     studentsSayStyle: {
         textAlign: 'left',
-        color: 'rgba(200,200,200,1)',
+        color: '#F6F4F3',
         padding: 10,
         fontSize: win.width /25,
         fontWeight: '700',
+        fontFamily: 'Roboto-Medium',
     },
 
     studentQuoteStyle0: {
         textAlign: 'left',
-        color: 'rgba(200,200,200,1)',
+        color: '#F6F4F3',
         padding: 10,
         fontSize: win.width /25,
+        fontFamily: 'Roboto',
     },
 
     studentQuoteStyle1: {
@@ -63,6 +68,7 @@ export const buildingStyles = StyleSheet.create({
         color: 'rgba(200,200,200,1)',
         padding: 15,
         fontSize: win.width /25,
+        fontFamily: 'Roboto',
     },
 
     footerView: {
@@ -92,5 +98,6 @@ export const buildingStyles = StyleSheet.create({
     imagePreviewText: {
         color: 'white',
         fontSize: win.width /20,
+        fontFamily: 'Source'
     },
 });

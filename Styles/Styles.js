@@ -14,17 +14,19 @@ export const styles = StyleSheet.create({
         paddingTop: 30,
         paddingBottom: 10,
         // height: '49%',
-        backgroundColor: '#003B71',
+        backgroundColor: '#1C475F',
     },
 
     logoHeaderText: {
         color: 'white',
-        fontWeight: '600'
+        fontWeight: '600',
+        fontFamily: 'Source',
+        fontSize: 16
     },
 
     logoHeaderTextHidden: {
-        color: '#003B71',
+        color: '#1C475F',
         fontWeight: '600',
-        fontSize: 8
+        fontSize: 8,
     }
 });

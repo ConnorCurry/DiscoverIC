@@ -6,37 +6,49 @@ import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { HomeScreen } from './Screens/Home.js'
 import { styles } from './Styles/Styles.js'
 import * as Font from 'expo-font';
-import { AppLoading } from 'expo'
+import  AppLoading  from 'expo-app-loading'
 import { BuildingScreen } from './Screens/Building.js';
+import { useFonts } from 'expo-font';
 
 const Stack = createStackNavigator();
 
-export default function App({ navigation }) {
+export default function App({ navigation, props }) {
+    let [fontsLoaded] = useFonts({
+        'Trajan': require('./assets/fonts/Trajan-Pro-Regular.ttf'),
+        'Source': require('./assets/fonts/Source_Serif_Pro/SourceSerifPro-Regular.ttf'),
+        'Source-Bold': require('./assets/fonts/Source_Serif_Pro/SourceSerifPro-Black.ttf'),
+        'Roboto': require('./assets/fonts/Roboto/Roboto-Regular.ttf'),
+        'Roboto-Medium': require('./assets/fonts/Roboto/Roboto-Medium.ttf'),
+    });
 
-    return (
-        <NavigationContainer>
-            <Stack.Navigator initialRouteName>
-                <Stack.Screen 
-                    name="Home" 
-                    component={HomeScreen} 
-                    options={{
-                        headerStyle: {backgroundColor: '#003B71'}, 
-                        headerTintColor: 'white',
-                        header: HomeHeader
-                    }}
-                />
-                <Stack.Screen
-                    name="Building"
-                    component={BuildingScreen}
-                    options={{
-                        headerStyle: {backgroundColor: '#003B71'}, 
-                        headerTintColor: 'white',
-                        header: BuildingHeader,
-                    }}
-                />
-            </Stack.Navigator>      
-        </NavigationContainer>
-    );
+    if(!fontsLoaded) {
+        return <AppLoading/>;
+    } else {
+        return (
+            <NavigationContainer>
+                <Stack.Navigator initialRouteName>
+                    <Stack.Screen 
+                        name="Home" 
+                        component={HomeScreen} 
+                        options={{
+                            headerStyle: {backgroundColor: '#1C475F'}, 
+                            headerTintColor: 'white',
+                            header: HomeHeader
+                        }}
+                    />
+                    <Stack.Screen
+                        name="Building"
+                        component={BuildingScreen}
+                        options={{
+                            headerStyle: {backgroundColor: '#1C475F'}, 
+                            headerTintColor: 'white',
+                            header: BuildingHeader,
+                        }}
+                    />
+                </Stack.Navigator>      
+            </NavigationContainer>
+        );
+    }
 }
 
 function HomeHeader ( {route, navigation } ) {

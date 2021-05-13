@@ -48,7 +48,7 @@ export function ImageViewer({images, setViewingImages, viewingImages}) {
         }
 
         return (
-        <Swiper loop={false} activeDotColor={'#003B71'}>
+        <Swiper loop={false} activeDotColor={'#FFC847'} dotColor={'#1C475F'}>
             {imageArray}
         </Swiper>
         )

@@ -25,12 +25,15 @@ export const imageViewerStyles = StyleSheet.create({
         margin: 10,
         color:'white',
         fontWeight: 'bold',
+        fontFamily: 'Source-Bold'
     },
     contentText: {
         fontSize: screenSize * 3,
         textAlign: 'center', 
         marginHorizontal: 30,
         color: 'white',
+        fontFamily: 'Source-Bold'
+
     },
 
     image: {

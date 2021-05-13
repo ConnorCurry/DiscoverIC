@@ -63,7 +63,7 @@ export function HomeScreen ( {route, navigation} ) {
     }
 
     return ( 
-        <ScrollView style={{backgroundColor: '#002343'}}>
+        <ScrollView style={{backgroundColor: '#1C475F'}}>
             <View>
                 <StatusBar style="light"/>
                 <View>
@@ -77,15 +77,15 @@ export function HomeScreen ( {route, navigation} ) {
             </View>
             <View>
                 <View style={homeStyles.divider}>
-                    <Text style={homeStyles.buildingText}>Academic:</Text>
+                    <Text style={homeStyles.dividerText}>Academic:</Text>
                 </View>
                 {academic}
                 <View style={homeStyles.divider}>
-                    <Text style={homeStyles.buildingText}>Residential:</Text>
+                    <Text style={homeStyles.dividerText}>Residential:</Text>
                 </View>
                 {residential}
                 <View style={homeStyles.divider}>
-                    <Text style={homeStyles.buildingText}>Campus Life:</Text>
+                    <Text style={homeStyles.dividerText}>Campus Life:</Text>
                 </View>
                 {campusLife}
             </View>

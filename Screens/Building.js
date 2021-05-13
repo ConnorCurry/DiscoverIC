@@ -41,7 +41,7 @@ export function BuildingScreen ({ route, navigation }) {
         )
     }
     return(
-        <View style={{backgroundColor: '#003B71'}}>
+        <View style={{backgroundColor: '#1C475F'}}>
             <FlatList
                 style={buildingStyles.flatListStyle}
                 ListHeaderComponent={

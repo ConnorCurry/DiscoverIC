@@ -14,11 +14,16 @@ export const homeStyles = StyleSheet.create({
     divider: {
         width: win.width,
         height: 35,
-        backgroundColor: '#003B71',
+        backgroundColor: '#FFDD8E',
         borderWidth: 1,
-        borderColor: '#003B71',
+        borderColor: '#FFDD8E',
         justifyContent: 'center',
         padding: 5
+    },
+
+    dividerText: {
+        color: '#1C475F',
+        fontFamily: 'Roboto',
     },
 
     buildingImages: {
@@ -40,6 +45,7 @@ export const homeStyles = StyleSheet.create({
 
     buildingText: {
         color: 'white',
+        fontFamily: 'Roboto',
     },
 
     prwTextView: {
@@ -61,10 +67,11 @@ export const homeStyles = StyleSheet.create({
     },
     
     prwText: {
-        color: '#003B71',
+        color: '#1C475F',
         fontWeight: '500',
         fontSize: win.width/10,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontFamily: 'Source-Bold',
     }
 
 });
