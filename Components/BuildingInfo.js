@@ -29,7 +29,7 @@ export const buildingInfo = {
         ]
     },
 
-    "Dillingham Center" : {
+    "Dillingham Center for Theatre Arts" : {
         summary: "Dillingham is home to acting, sound, design and dance studios, dressing rooms and a costume shop. It houses Hoerner Theater, a 535-seat proscenium house. ",
         studies: "Theatre Studies, Musical Theatre, Acting",
         studentQuotes: [
@@ -46,8 +46,6 @@ export const buildingInfo = {
             {text: "The Red Carpet Outside the Theatres", image: require('../assets/building-images/dill/red-carpet.jpeg')},
             {text: "Studio 2", image: require('../assets/building-images/dill/studio2.jpeg')},
             {text: "Studio 6", image: require('../assets/building-images/dill/studio6.jpeg')},
-
-
         ]
     },
 
