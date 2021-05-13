@@ -25,8 +25,24 @@ export function BuildingScreen ({ route, navigation }) {
             </View>
         )
     }
+    let imageComponent = null;
+    if (buildingInfo[name].images.length != 0) {
+        imageComponent = (
+            <TouchableOpacity 
+            style={buildingStyles.imagePreviewView}
+            onPress={() => setViewingImages(true)}
+            >
+                <Image 
+                    style={buildingStyles.imagePreviewView}
+                    source={buildingInfo[name].images[0].image}/>
+                <View style={buildingStyles.imagePreviewTextView}>
+                    <Text style={buildingStyles.imagePreviewText}>Images</Text>
+                </View>
+            </TouchableOpacity>
+        )
+    }
     return(
-        <View>
+        <View style={{backgroundColor: '#003B71'}}>
             <FlatList
                 style={buildingStyles.flatListStyle}
                 ListHeaderComponent={
@@ -44,19 +60,9 @@ export function BuildingScreen ({ route, navigation }) {
                 data={buildingInfo[name].studentQuotes}
                 renderItem={({item}) => <RenderStudentQuotes quote={item.quote}/>}
                 ListFooterComponent={
-                    <View style={{paddingVertical: 10}}>
-                        <TouchableOpacity 
-                        style={buildingStyles.imagePreviewView}
-                        onPress={() => setViewingImages(true)}
-                        >
-                            <Image 
-                                style={buildingStyles.imagePreviewView}
-                                source={buildingInfo[name].images[0].image}/>
-                            <View style={buildingStyles.imagePreviewTextView}>
-                                <Text style={buildingStyles.imagePreviewText}>Images</Text>
-                            </View>
-                        </TouchableOpacity>
-                        <Text style={buildingStyles.accessibiltyStyle}>Accessible? {buildingInfo[name].accessible}</Text>
+                    <View style={{paddingVertical: 10, paddingBottom: 20}}>
+                        {imageComponent}
+                        <Text style={buildingStyles.accessibiltyStyle}>Accessibility: {buildingInfo[name].accessible}</Text>
                     </View>
                 }
             />
