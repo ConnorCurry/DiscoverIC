@@ -37,7 +37,6 @@ export function ImageViewer({images, setViewingImages, viewingImages}) {
         
         let imageArray = []
         for (let i = 0; i < images.length; i++) {
-            console.log(images[i].text);
             let tempItem = (
                 <View style={imageViewerStyles.contentContainer} key={i}>
                     <Text style={imageViewerStyles.contentText}>{images[i].text}</Text>

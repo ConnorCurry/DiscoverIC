@@ -44,6 +44,7 @@ function HomeHeader ( {route, navigation } ) {
         <SafeAreaView style={styles.logoHeader}>
             <Image source={require('./assets/ic-logo-white.png')} style={{ width: 170, height: 26 }}></Image>
             <Text style={styles.logoHeaderText}>DiscoverIC</Text>
+            <Text style={styles.logoHeaderTextHidden}>DiscoverIC</Text>
             <StatusBar style="light"/>
         </SafeAreaView>
     );

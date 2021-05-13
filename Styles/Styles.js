@@ -20,5 +20,11 @@ export const styles = StyleSheet.create({
     logoHeaderText: {
         color: 'white',
         fontWeight: '600'
+    },
+
+    logoHeaderTextHidden: {
+        color: '#003B71',
+        fontWeight: '600',
+        fontSize: 8
     }
 });
