@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Text, View, SafeAreaView, Image } from 'react-native';
+import { Text, View, SafeAreaView, Image, Button } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { HomeScreen } from './Screens/Home.js'
 import { styles } from './Styles/Styles.js'
 import * as Font from 'expo-font';
@@ -11,7 +11,7 @@ import { BuildingScreen } from './Screens/Building.js';
 
 const Stack = createStackNavigator();
 
-export default function App() {
+export default function App({ navigation }) {
 
     return (
         <NavigationContainer>
@@ -31,7 +31,7 @@ export default function App() {
                     options={{
                         headerStyle: {backgroundColor: '#003B71'}, 
                         headerTintColor: 'white',
-                        header: HomeHeader
+                        header: BuildingHeader,
                     }}
                 />
             </Stack.Navigator>      
@@ -45,6 +45,22 @@ function HomeHeader ( {route, navigation } ) {
             <Image source={require('./assets/ic-logo-white.png')} style={{ width: 170, height: 26 }}></Image>
             <Text style={styles.logoHeaderText}>DiscoverIC</Text>
             <StatusBar style="light"/>
+        </SafeAreaView>
+    );
+}
+function BuildingHeader ( {route, navigation } ) {
+    return (
+        <SafeAreaView style={styles.logoHeader}>
+            <Image source={require('./assets/ic-logo-white.png')} style={{ width: 170, height: 26 }}></Image>
+            <Text style={styles.logoHeaderText}>DiscoverIC</Text>
+            <StatusBar style="light"/>
+            <View style={{position: 'absolute', left: 10, bottom: 5}}>
+                <Button
+                    title={"Back"}
+                    onPress={() => {const popAction = StackActions.pop(1); navigation.dispatch(popAction)}}
+                    color={'white'}
+                />
+            </View>
         </SafeAreaView>
     );
 }
