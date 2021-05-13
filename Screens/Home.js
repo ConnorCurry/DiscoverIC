@@ -4,64 +4,91 @@ import { Text, View, SafeAreaView, ScrollView, Image, TouchableOpacity } from 'r
 import { styles } from '../Styles/Styles.js';
 import { homeStyles } from '../Styles/HomeStyles.js';
 import { FlatList } from 'react-native-gesture-handler';
-// import { buildings } from '../assets/buildings.json';
-
-const buildings = [
-    {key: "jjwcm", name: "James J. Whalen Center for Music", image: require('../assets/building-images/jjwcm.jpeg')}, 
-    {key: "dill", name: "Dillingham Center", image: require('../assets/building-images/dill.jpeg')}, 
-    {key: "frnd", name: "Friends Hall", image: require('../assets/building-images/frnd.jpeg')}, 
-    {key: "gann", name: "Gannett Center", image: require('../assets/building-images/gann.jpeg')}, 
-    {key: "chs", name: "Center for Health Sciences", image: require('../assets/building-images/chs.jpeg')}, 
-    {key: "hill", name: "Hill Center", image: require('../assets/building-images/hill.jpeg')}, 
-    {key: "job", name: "Job Hall", image: require('../assets/building-images/job.jpeg')},
-    {key: "cer", name: "Cerrache Center", image: require('../assets/building-images/cer.jpeg')},
-    {key: "bus", name: "Park School of Business", image: require('../assets/building-images/bus.jpeg')},
-    {key: "park", name: "Park School of Communications", image: require('../assets/building-images/park.jpeg')},
-    {key: "phil", name: "Campus Center - Phillips Hall", image: require('../assets/building-images/phil.jpeg')},
-    {key: "writ", name: "Smiddy Hall", image: require('../assets/building-images/writ.jpeg')},
-    {key: "text", name: "Textor Hall", image: require('../assets/building-images/text.jpeg')},
-    {key: "will", name: "Williams Hall", image: require('../assets/building-images/will.jpeg')},
-    /* {key: "", name: "", image: require('../assets/icon.png')}, */
-]
+import { buildings } from '../Components/BuildingsList.js';
 
 export function HomeScreen ( {route, navigation} ) {
 
-    function RenderBuildings ({name, imageSource}) {
-        return(
+    let academic = []
+    for (i = 0; i < buildings.academic.length; i++){
+        let academicName = buildings.academic[i].name;
+        let academicImage = buildings.academic[i].image;
+        let temp = (
             <TouchableOpacity style={{borderBottomColor: 'black', borderBottomWidth: 2,}}
+            key={"a"+i}
             activeOpacity={.2}
-            onPress={() => navigation.navigate('Building', {name: name, imageSource: imageSource})}>
-                <Image source={imageSource} style={homeStyles.buildingImages}/>
+            onPress={() => navigation.navigate('Building', {name: academicName, imageSource: academicImage})}>
+                <Image source={buildings.academic[i].image} style={homeStyles.buildingImages}/>
                 <View style={homeStyles.buildingTextView}>
-                    <Text style={homeStyles.buildingText}>{name}</Text>
+                    <Text style={homeStyles.buildingText}>{academicName}</Text>
                 </View>
             </TouchableOpacity>
-        );
+        )
+        academic[i] = temp;
+    }
+
+    let residential = []
+    for (j = 0; j < buildings.residential.length; j++){
+        let residentialName = buildings.residential[j].name;
+        let residentialImage = buildings.residential[j].image;
+        let temp = (
+            <TouchableOpacity style={{borderBottomColor: 'black', borderBottomWidth: 2,}}
+            key={"r"+j}
+            activeOpacity={.2}
+            onPress={() => navigation.navigate('Building', {name: residentialName, imageSource: residentialImage})}>
+                <Image source={buildings.residential[j].image} style={homeStyles.buildingImages}/>
+                <View style={homeStyles.buildingTextView}>
+                    <Text style={homeStyles.buildingText}>{residentialName}</Text>
+                </View>
+            </TouchableOpacity>
+        )
+        residential[j] = temp;
+    }
+
+    let campusLife = []
+    for (k = 0; k < buildings.campusLife.length; k++){
+        let campusName = buildings.campusLife[k].name;
+        let campusImage = buildings.campusLife[k].image;
+        let temp = (
+            <TouchableOpacity style={{borderBottomColor: 'black', borderBottomWidth: 2,}}
+            key={"c"+k}
+            activeOpacity={.2}
+            onPress={() => navigation.navigate('Building', {name: campusName, imageSource: campusImage})}>
+                <Image source={buildings.campusLife[k].image} style={homeStyles.buildingImages}/>
+                <View style={homeStyles.buildingTextView}>
+                    <Text style={homeStyles.buildingText}>{campusName}</Text>
+                </View>
+            </TouchableOpacity>
+        )
+        campusLife[k] = temp;
     }
 
     return ( 
-        <View>
-            <FlatList
-                style={{backgroundColor: '#002343'}}
-                ListHeaderComponent={
-                    <View>
-                        <StatusBar style="light"/>
-                        <View>
-                            <Image source={require('../assets/prw-with-flowers.jpeg')} style={homeStyles.images}/>
-                            <View style={homeStyles.prwTextView}>
-                                <View style={homeStyles.prwTextBackground}>
-                                    <Text style={homeStyles.prwText}>Welcome to {"\n"} Ithaca College</Text>
-                                </View>
-                            </View>
-                        </View>
-                        <View style={homeStyles.divider}>
+        <ScrollView style={{backgroundColor: '#002343'}}>
+            <View>
+                <StatusBar style="light"/>
+                <View>
+                    <Image source={require('../assets/prw-with-flowers.jpeg')} style={homeStyles.images}/>
+                    <View style={homeStyles.prwTextView}>
+                        <View style={homeStyles.prwTextBackground}>
+                            <Text style={homeStyles.prwText}>Welcome to {"\n"} Ithaca College</Text>
                         </View>
                     </View>
-                }
-                data={buildings}
-                extraData={buildings}
-                renderItem={({item}) => <RenderBuildings name={item.name} imageSource={item.image}/>}
-            />
-        </View>
+                </View>
+            </View>
+            <View>
+                <View style={homeStyles.divider}>
+                    <Text style={homeStyles.buildingText}>Academic:</Text>
+                </View>
+                {academic}
+                <View style={homeStyles.divider}>
+                    <Text style={homeStyles.buildingText}>Residential:</Text>
+                </View>
+                {residential}
+                <View style={homeStyles.divider}>
+                    <Text style={homeStyles.buildingText}>Campus Life:</Text>
+                </View>
+                {campusLife}
+            </View>
+        </ScrollView>
     );
 }

@@ -28,7 +28,37 @@ export const buildingInfo = {
             {text: "Instrument Repair Window", image: require('../assets/building-images/jjwcm/repair-window.jpeg')},
         ]
     },
+
     "Dillingham Center" : {
         summary: ""
     },
+
+    "Park School of Communications" : {
+        summary: ""
+    },
+
+    "Williams Hall" : {
+        summary: ""
+    },
+
+    "Towers Residence Halls" : {
+        summary: ""
+    },
+
+    "Terraces Residence Halls" : {
+        summary: ""
+    },
+
+    "Circles Apartments" : {
+        summary: ""
+    },
+
+    "Athletics and Events Center" : {
+        summary: ""
+    },
+
+    "Campus Center - Phillips Hall" : {
+        summary: ""
+    },
+
 }

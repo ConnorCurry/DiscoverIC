@@ -10,6 +10,7 @@ export function BuildingScreen ({ route, navigation }) {
     const {imageSource} = route.params;
     const [quoteRender, setQuoteRender] = React.useState(true);
     const [viewingImages, setViewingImages] = React.useState(false);
+    console.log(buildingInfo)
 
     function RenderStudentQuotes({quote}) {
         /* if (quoteRender) {

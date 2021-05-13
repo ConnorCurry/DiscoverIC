@@ -13,11 +13,12 @@ export const homeStyles = StyleSheet.create({
 
     divider: {
         width: win.width,
-        height: 5,
+        height: 35,
         backgroundColor: '#003B71',
         borderWidth: 1,
         borderColor: '#003B71',
         justifyContent: 'center',
+        padding: 5
     },
 
     buildingImages: {
