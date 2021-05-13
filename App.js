@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { Text, View, SafeAreaView, Image, Button } from 'react-native';
+import { Text, View, SafeAreaView, Image, Button, Platform } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { HomeScreen } from './Screens/Home.js'
@@ -9,6 +9,7 @@ import * as Font from 'expo-font';
 import  AppLoading  from 'expo-app-loading'
 import { BuildingScreen } from './Screens/Building.js';
 import { useFonts } from 'expo-font';
+
 
 const Stack = createStackNavigator();
 
@@ -71,7 +72,7 @@ function BuildingHeader ( {route, navigation } ) {
                 <Button
                     title={"Back"}
                     onPress={() => {const popAction = StackActions.pop(1); navigation.dispatch(popAction)}}
-                    color={'white'}
+                    color={Platform.OS === 'ios' ? 'white': '#0077B8'}
                 />
             </View>
         </SafeAreaView>

@@ -41,7 +41,7 @@ export function ImageViewer({images, setViewingImages, viewingImages}) {
                 <View style={imageViewerStyles.contentContainer} key={i}>
                     <Text style={imageViewerStyles.contentText}>{images[i].text}</Text>
                     <Image source={images[i].image} style={imageViewerStyles.image}/>
-                    <Button title="Dismiss" onPress={() => done()} color={'white'}/>
+                    <Button title="Dismiss" onPress={() => done()} color={Platform.OS === 'ios' ? 'white': '#0077B8'}/>
                 </View>
             );
             imageArray[i] = tempItem;

@@ -1,7 +1,7 @@
 export const buildings = {
     academic : [
         {key: "jjwcm", name: "James J. Whalen Center for Music", image: require('../assets/building-images/jjwcm.jpeg')}, 
-        {key: "dill", name: "Dillingham Center", image: require('../assets/building-images/dill.jpeg')}, 
+        {key: "dill", name: "Dillingham Center for Theatre Arts", image: require('../assets/building-images/dill.jpeg')}, 
         {key: "park", name: "Park School of Communications", image: require('../assets/building-images/park.jpeg')},
         {key: "will", name: "Williams Hall", image: require('../assets/building-images/will.jpeg')},
     ],
